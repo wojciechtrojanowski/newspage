@@ -14,11 +14,16 @@ $veryDarkBlue: hsl(240, 100%, 5%);
 body {
 	font-size: 15px;
 	font-family: 'Inter', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .wrapper {
 	max-width: 375px;
+	min-width: 375px;
 	padding: 1em;
+	position: relative;
 
 	.top {
 		display: flex;
@@ -29,7 +34,7 @@ body {
 		&__burger,
 		&__close {
 			transform: scale(1.2);
-			position: fixed;
+			position: absolute;
 			top: 1.5em;
 			right: 2em;
 			z-index: 100;
@@ -62,11 +67,6 @@ body {
 				margin: 1em 0 1em 0;
 				cursor: pointer;
 				transition: 0.3s;
-
-				&:hover {
-					transform: scale(1.2);
-					transform-origin: center;
-				}
 			}
 		}
 		&__animation {
@@ -76,8 +76,11 @@ body {
 	.header {
 		padding-bottom: 4em;
 		&__img {
-			img {
+			&-small {
 				width: 100%;
+			}
+			&-big {
+				display: none;
 			}
 		}
 		&__title {
@@ -163,5 +166,104 @@ body {
 	}
 	.hidden {
 		display: none;
+	}
+}
+
+@media (min-width: 1440px) {
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}
+	.wrapper {
+		min-width: 1200px;
+		display: flex;
+		flex-wrap: wrap;
+
+		.top {
+			flex-basis: 50%;
+
+			&__burger {
+				display: none;
+			}
+		}
+		.navigation {
+			position: static;
+			flex-basis: 50%;
+			transform: translateX(0);
+			padding: 0;
+
+			&__list {
+				width: 100%;
+				padding: 0;
+				display: flex;
+				justify-content: space-between;
+
+				&-item {
+					margin: 0;
+				}
+			}
+		}
+		.header {
+			flex-basis: 70%;
+			margin-top: 3em;
+
+			padding-right: 2em;
+			padding-bottom: 0;
+			&__img {
+				&-small {
+					display: none;
+				}
+				&-big {
+					display: block;
+					width: 100%;
+				}
+			}
+			&__content {
+				display: flex;
+				padding: 2em 2em 0 2em;
+			}
+			&__description {
+				flex-basis: 50%;
+			}
+			&__title {
+				flex-basis: 50%;
+				font-size: 2.5em;
+			}
+			&__text {
+			}
+		}
+		.articles {
+			&__title {
+				font-size: 2rem;
+			}
+			&__article {
+				margin-top: 1.5em;
+				&-title {
+					font-size: 1.3rem;
+				}
+				&-text {
+					font-size: 0.9rem;
+				}
+			}
+			margin-top: 3em;
+			flex-basis: 30%;
+		}
+		.adv {
+			display: flex;
+			margin-top: 2em;
+			&__content {
+				&-number {
+					font-size: 2rem;
+				}
+				&-title {
+					font-size: 1.1rem;
+				}
+				&-text {
+					font-size: 0.8rem;
+				}
+			}
+		}
 	}
 }
