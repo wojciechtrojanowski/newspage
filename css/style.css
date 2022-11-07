@@ -185,7 +185,11 @@ body {
     justify-content: space-between;
   }
   .wrapper .navigation__list-item {
+    color: hsl(236deg, 13%, 42%);
     margin: 0;
+  }
+  .wrapper .navigation__list-item:hover {
+    color: hsl(5deg, 85%, 63%);
   }
   .wrapper .header {
     flex-basis: 70%;
@@ -211,6 +215,13 @@ body {
     flex-basis: 50%;
     font-size: 2.5em;
   }
+  .wrapper .header__button button {
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .wrapper .header__button button:hover {
+    background-color: hsl(240deg, 100%, 5%);
+  }
   .wrapper .articles {
     margin-top: 3em;
     flex-basis: 30%;
@@ -223,6 +234,11 @@ body {
   }
   .wrapper .articles__article-title {
     font-size: 1.3rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .wrapper .articles__article-title:hover {
+    color: hsl(35deg, 77%, 62%);
   }
   .wrapper .articles__article-text {
     font-size: 0.9rem;
@@ -236,6 +252,11 @@ body {
   }
   .wrapper .adv__content-title {
     font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .wrapper .adv__content-title:hover {
+    color: hsl(5deg, 85%, 63%);
   }
   .wrapper .adv__content-text {
     font-size: 0.8rem;

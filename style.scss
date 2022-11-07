@@ -201,7 +201,11 @@ body {
 				justify-content: space-between;
 
 				&-item {
+					color: $darkGrayishBlue;
 					margin: 0;
+					&:hover {
+						color: $softRed;
+					}
 				}
 			}
 		}
@@ -231,7 +235,14 @@ body {
 				flex-basis: 50%;
 				font-size: 2.5em;
 			}
-			&__text {
+			&__button {
+				button {
+					transition: 0.3s;
+					cursor: pointer;
+				}
+				button:hover {
+					background-color: $veryDarkBlue;
+				}
 			}
 		}
 		.articles {
@@ -242,6 +253,11 @@ body {
 				margin-top: 1.5em;
 				&-title {
 					font-size: 1.3rem;
+					cursor: pointer;
+					transition: 0.3s;
+					&:hover {
+						color: $softOrange;
+					}
 				}
 				&-text {
 					font-size: 0.9rem;
@@ -259,7 +275,13 @@ body {
 				}
 				&-title {
 					font-size: 1.1rem;
+					cursor: pointer;
+					transition: 0.3s;
+					&:hover {
+						color: $softRed;
+					}
 				}
+
 				&-text {
 					font-size: 0.8rem;
 				}
